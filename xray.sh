@@ -31,7 +31,7 @@ checkwarp(){
 }
 
 V6_PROXY=""
-IP=$(curl -s4m8 https://ip.gs)
+IP=$(curl -s4m8 --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Safari/605.1.15" https://api.ip.sb/ip)
 [[ "$?" != "0" ]] && IP=$(curl -s6m8 https://ip.gs) && V6_PROXY="https://gh-proxy-misakano7545.koyeb.app/"
 [[ $V6_PROXY != "" ]] && echo -e nameserver 2a01:4f8:c2c:123f::1 > /etc/resolv.conf
 
